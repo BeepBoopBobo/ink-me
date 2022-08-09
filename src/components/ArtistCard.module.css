@@ -19,19 +19,57 @@
 
 .cardDescription {
     width: 70%;
-    background-color: gray;
+    display: block;
+    background-color: var(--light-gray)
 }
 
 .cardDescriptionLeft {
     width: 70%;
     text-align: right;
-    background-color: gray;
-
+    background-color: var(--light-gray)
 }
 
-.cardTag {
-    background-color: black;
-    color: white;
+.cardDescription>*,
+.cardDescriptionLeft>* {
+    margin: 20px;
+}
+
+.biography {
+    font-size: 1.3rem;
+}
+
+
+.cardName {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.tags {
+    display: flex;
+    gap: 5px;
+}
+
+.cardDescriptionLeft .tags {
+    justify-content: end;
+}
+
+.cardDescription .cardTag,
+.cardDescriptionLeft .cardTag {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.socialLink,
+.galeryLink {
     padding: 5px;
-    margin: 5px;
+    color: var(--black);
+    text-decoration: none;
+    font-size: larger;
+}
+
+.socialLink:hover,
+.galeryLink:hover {
+    color: var(--white);
 }

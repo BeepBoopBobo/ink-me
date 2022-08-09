@@ -5,7 +5,7 @@
     align-items: flex-end;
     height: 100px;
     width: 100%;
-    background-color: black;
+    background-color: var(--black);
 }
 
 #headerList {
@@ -18,29 +18,25 @@
 }
 
 .headerItem {
-    background-color: black;
-    letter-spacing: 2px;
     width: 200px;
     height: 40px;
-
 }
 
-.headerItem:hover {
-    background-color: gray;
+.navButton {
+    background-color: var(--black);
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: var(--white);
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-.link {
-    width: 200px;
-    height: 40px;
+.activeLink>.navButton {
     text-decoration: none;
-    color: white;
 
 }
 
-.activeLink {
-    width: 200px;
-    height: 40px;
-    text-decoration: none;
-    color: white;
-    border-bottom: 2px solid white;
+.navButton:hover {
+    background-color: var(--dark-gray)
 }

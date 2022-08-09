@@ -8,9 +8,13 @@ const AboutUs = () => {
             <ArtistCard
                 index={index}
                 name={item.name}
-                bio={item.bio}
                 image={item.image}
-                tags={item.tags}>
+                bio={item.bio}
+                tags={item.tags}
+                youTube={item.youTube}
+                tikTok={item.tikTok}
+                instagram={item.instagram}
+            >
             </ArtistCard>
         )}
     </>
