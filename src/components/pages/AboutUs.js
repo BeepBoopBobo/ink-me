@@ -5,6 +5,7 @@ import ArtistCard from "../ArtistCard";
 const AboutUs = () => {
     return <>
         {artists.map((item, index) =>
+
             <ArtistCard
                 index={index}
                 name={item.name}

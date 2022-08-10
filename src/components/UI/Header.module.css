@@ -40,3 +40,18 @@
 .navButton:hover {
     background-color: var(--dark-gray)
 }
+
+@media screen and (max-width: 700px) {
+    #header {
+        height: auto;
+    }
+
+    #headerList {
+        display: block;
+        width: 100%;
+    }
+
+    .headerItem {
+        width: 100%;
+    }
+}

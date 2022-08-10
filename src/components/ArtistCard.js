@@ -1,43 +1,120 @@
 import React from "react";
 import styles from './ArtistCard.module.css';
 import { FaInstagram, FaTiktok, FaYoutube, FaImages } from 'react-icons/fa';
+import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
+
+const variants = {
+    hiddenRight: { x: -100, opacity: 0 },
+    hiddenLeft: { x: 100, opacity: 0 },
+    swipeIn: { x: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 0.3 } }
+}
 
 const ArtistCard = (props) => {
+
     return <div className={styles.cardContainer}>
         {props.index % 2 ? <>
-            <div className={styles.cardDescriptionLeft}>
-                <div className={styles.cardName}>{props.name}</div>
+            <motion.div className={styles.cardDescriptionLeft}
+                initial='hiddenRight'
+                whileInView='swipeIn'
+                viewport={{ once: true }}
+                variants={variants}>
+
+
+                <motion.div className={styles.cardName}
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 0.6 } }}
+                    viewport={{ once: true }}
+                >{props.name}</motion.div>
+
                 <div className={styles.tags}>
-                    {props.tags.map(item => <span className={styles.cardTag}>#{item}</span>)}
+                    {props.tags.map((item, index) =>
+                        <motion.span className={styles.cardTag}
+                            initial={{ y: -100, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 0.6 + (0.1 * index) } }}
+                            viewport={{ once: true }}>#{item}
+                        </motion.span>)}
                 </div>
-                <div className={styles.biography}>{props.bio}</div>
-                <a href='#' className={styles.galeryLink}><FaImages /> Moje tvorba</a>
-                <div className={styles.socials}>
+
+                <motion.div className={styles.biography}
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 1 } }}
+                    viewport={{ once: true }}>{props.bio}</motion.div>
+
+                <motion.div
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 1.2 } }}
+                    viewport={{ once: true }}
+                ><a href='#' className={styles.galeryLink}><FaImages /> Moje tvorba</a></motion.div>
+
+                <motion.div className={styles.socials}
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 1.4 } }}
+                    viewport={{ once: true }}
+                >
                     {props.instagram !== '' ? <a href={`https://www.instagram.com/${props.instagram}`} className={styles.socialLink}><FaInstagram /> {props.instagram}</a> : null}
                     {props.tikTok !== '' ? <a href={`https://www.tiktok.com/@${props.tikTok}`} className={styles.socialLink}> <FaTiktok /> {props.tikTok}</a> : null}
                     {props.youTube !== '' ? <a href={`https://www.youtube.com/c/${props.youTube}`} className={styles.socialLink}><FaYoutube /> {props.youTube}</a> : null}
-                </div>
-            </div>
-            <div className={styles.cardPicture}>
+                </motion.div>
+            </motion.div>
+
+            <motion.div className={styles.cardPicture}
+                initial='hiddenLeft'
+                whileInView='swipeIn'
+                viewport={{ once: true }}
+                variants={variants}>
                 <img className={styles.Picture} src={props.image} alt={`Artist ${props.name}`} />
-            </div>
+            </motion.div>
         </> : <>
-            <div className={styles.cardPicture}>
+            <motion.div className={styles.cardPicture}
+                initial='hiddenRight'
+                whileInView='swipeIn'
+                viewport={{ once: true }}
+                variants={variants}>
                 <img className={styles.Picture} src={props.image} alt={`Artist ${props.name}`} />
-            </div>
-            <div className={styles.cardDescription}>
-                <div className={styles.cardName}>{props.name}</div>
+            </motion.div>
+
+            <motion.div className={styles.cardDescription}
+                initial='hiddenLeft'
+                whileInView='swipeIn'
+                viewport={{ once: true }}
+                variants={variants}>
+
+                <motion.div className={styles.cardName}
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 0.6 } }}
+                    viewport={{ once: true }}
+                >{props.name}</motion.div>
+
                 <div className={styles.tags}>
-                    {props.tags.map(item => <span className={styles.cardTag}>#{item}</span>)}
+                    {props.tags.map((item, index) =>
+                        <motion.span className={styles.cardTag}
+                            initial={{ y: -100, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 0.6 + (0.1 * index) } }}
+                            viewport={{ once: true }}>#{item}
+                        </motion.span>)}
                 </div>
-                <div className={styles.biography}>{props.bio}</div>
-                <a href='#' className={styles.galeryLink}><FaImages /> Moje tvorba</a>
-                <div className={styles.socials}>
+
+                <motion.div className={styles.biography}
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 1 } }}
+                    viewport={{ once: true }}>{props.bio}</motion.div>
+
+                <motion.div
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 1.2 } }}
+                    viewport={{ once: true }}
+                ><a href='#' className={styles.galeryLink}><FaImages /> Moje tvorba</a></motion.div>
+
+                <motion.div className={styles.socials}
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1, transition: { type: 'spring', bounce: 0.4, duration: 0.8, delay: 1.4 } }}
+                    viewport={{ once: true }}
+                >
                     {props.instagram !== '' ? <a href={`https://www.instagram.com/${props.instagram}`} className={styles.socialLink}><FaInstagram /> {props.instagram}</a> : null}
                     {props.tikTok !== '' ? <a href={`https://www.tiktok.com/@${props.tikTok}`} className={styles.socialLink}> <FaTiktok /> {props.tikTok}</a> : null}
                     {props.youTube !== '' ? <a href={`https://www.youtube.com/c/${props.youTube}`} className={styles.socialLink}><FaYoutube /> {props.youTube}</a> : null}
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </>
         }
     </div>
