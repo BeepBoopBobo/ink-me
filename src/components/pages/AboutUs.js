@@ -1,5 +1,5 @@
 import React from "react";
-import { artists } from '../../Artists';
+import { artists } from '../../Data';
 import ArtistCard from "../ArtistCard";
 
 const AboutUs = () => {

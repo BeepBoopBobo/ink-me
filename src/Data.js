@@ -30,3 +30,51 @@ export const artists = [
         art: []
     },
 ]
+
+export const faq = [
+    {
+        id: '01',
+        question: 'Bolí to?',
+        answer: 'Ano.',
+    },
+    {
+        id: '02',
+        question: 'Kolik to bude stát?',
+        answer: '-',
+    },
+    {
+        id: '03',
+        question: 'Jak se můžu připravit?',
+        answer: '-',
+    },
+    {
+        id: '04',
+        question: 'Kdy bych se neměl/a nechat tetovat?',
+        answer: '-',
+    },
+    {
+        id: '05',
+        question: 'Jak dlouho se tetování hojí?',
+        answer: '-',
+    },
+    {
+        id: '06',
+        question: 'Můžu přijít s kamarádem/kamarádkou?',
+        answer: '-',
+    },
+    {
+        id: '07',
+        question: '',
+        answer: '-',
+    },
+    {
+        id: '08',
+        question: '',
+        answer: '-',
+    },
+    {
+        id: '09',
+        question: '',
+        answer: '-',
+    }
+]
