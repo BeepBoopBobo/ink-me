@@ -26,3 +26,23 @@
     left: 10px;
 
 }
+
+@media screen and (max-width: 1200px) {
+
+    .FAQpageLayout {
+        width: 90%;
+    }
+
+    .Question {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .Question {
+        width: 100%;
+    }
+
+
+}

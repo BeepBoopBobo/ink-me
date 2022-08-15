@@ -13,12 +13,13 @@ const FAQ = () => {
     }
 
     return <div className={styles.FAQpageLayout}>
-        {faq.map(item => {
+        {faq.map((item, index) => {
             return <Question
                 key={item.id}
                 id={item.id}
                 que={item.question}
                 ans={item.answer}
+                index={index}
                 selected={selectedQuestion === item.id ? true : false}
                 onClick={selectQuestionHandler}></Question>
         })}

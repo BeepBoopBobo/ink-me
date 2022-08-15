@@ -49,7 +49,7 @@ export const faq = [
     },
     {
         id: '04',
-        question: 'Kdy bych se neměl/a nechat tetovat?',
+        question: 'V jakých případech bych se neměl/a nechat tetovat?',
         answer: '-',
     },
     {
@@ -64,17 +64,17 @@ export const faq = [
     },
     {
         id: '07',
-        question: '',
+        question: 'Jak dlouho to bude trvat?',
         answer: '-',
     },
     {
         id: '08',
-        question: '',
+        question: 'Kdo mě bude tetovat?',
         answer: '-',
     },
     {
         id: '09',
-        question: '',
+        question: 'Co znamená handpoke?',
         answer: '-',
     }
 ]

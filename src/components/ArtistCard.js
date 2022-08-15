@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './ArtistCard.module.css';
 import { FaInstagram, FaTiktok, FaYoutube, FaImages } from 'react-icons/fa';
-import { motion } from 'framer-motion/dist/framer-motion'
+import { motion } from 'framer-motion/dist/framer-motion';
 
 const variants = {
     hiddenRight: { x: -100, opacity: 0 },

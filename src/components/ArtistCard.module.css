@@ -85,7 +85,17 @@
     background-color: var(--black);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1200px) {
+    .cardContainer {
+        width: 95%;
+    }
+
+    .cardPicture {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 480px) {
     .cardContainer {
         width: 100%;
         display: block;
